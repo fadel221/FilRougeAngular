@@ -6,10 +6,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./connexion.component.css']
 })
 export class ConnexionComponent implements OnInit {
-public login="user";
-public pwd="12345";
+public login: string="admin";
+public pwd: string="admin";
+public message: string="";
   
+connexion (login:string,pwd:string)
+{
+  if (this.login==login && this.pwd==pwd)
+  {
+    return this.message= "Connexion Fait avec succées";
+  }
+  return this.message= "Echec de connexion";
+  
+}
 
+alert(a:any)
+{
+  alert (a);
+}
   ngOnInit(): void {
     
   }
