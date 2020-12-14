@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'FilRougeAngular';
+
+  constructor (private router: Router)
+  {
+
+  }
+  
+  show (){
+    this.router.navigate(['profils']);
+  }
+  public opened=false;
+
+  
 }

@@ -1,1 +1,7 @@
-<p>profil works!</p>
+<button (click)="showProfils()">Lister profils</button>
+<ul>
+<li *ngFor="let profil of profils ">
+    {{profil.libelle}}
+    
+</li>
+</ul>

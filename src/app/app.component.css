@@ -1,0 +1,19 @@
+mat-sidenav-container
+{
+    height: 100%;
+}
+li
+{
+    list-style: none;
+}
+mat-sidenav, mat-sidenav-content
+{
+    padding: 16px;
+    height: 100%;
+}
+mat-sidenav
+{
+    background-color:#20C5E9;
+    width: 200px;
+    flex-direction:column
+}

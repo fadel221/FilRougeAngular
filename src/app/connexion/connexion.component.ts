@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { ConnexionService } from '../Services/connexion.service';
 
 @Component({
   selector: 'app-connexion',
@@ -6,24 +8,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./connexion.component.css']
 })
 export class ConnexionComponent implements OnInit {
-public login: string="admin";
-public pwd: string="admin";
-public message: string="";
-  
-connexion (login:string,pwd:string)
+
+
+constructor (private con: ConnexionService,private router: Router )
 {
-  if (this.login==login && this.pwd==pwd)
-  {
-    return this.message= "Connexion Fait avec succées";
-  }
-  return this.message= "Echec de connexion";
-  
+
+}
+ 
+login(credentials :any)
+{
+  this.con.GetToken(credentials).subscribe(
+    (response : any) => 
+    {
+      const token= response.token;
+      localStorage.setItem('token',token);
+      this.router.navigate(['profils']);
+    },
+    (error: any) =>
+    {
+      
+    }
+  )
 }
 
-alert(a:any)
-{
-  alert (a);
-}
   ngOnInit(): void {
     
   }

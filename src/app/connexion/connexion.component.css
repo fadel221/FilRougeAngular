@@ -1,0 +1,81 @@
+#content-form
+{
+    width: 60%;
+    height: 600px;
+    background-color: aliceblue;
+    position: relative;
+    margin: auto;
+    top:110px;
+    display: flex;
+}
+#content-login
+{
+    width: 50%;
+    height: 100%;
+    background-color: #FFFF;
+    
+}
+#content-avatar
+{
+    width: 50%;
+    height: 100%;
+    background-color: #20C5E9;    
+    position: relative; 
+}
+#label-form
+{
+position: absolute;
+width: 282px;
+height: 87px;
+left: 161px;
+top: 33px;
+
+font-family: Palanquin Dark;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 87px;
+
+/* identical to box height */
+
+color: #20C5E9;
+}
+
+
+#container-login
+{
+    width: 100%;
+    height: 200px;
+    position: relative;
+    margin: 35%;
+    padding: 3%;
+
+}
+
+
+
+
+
+
+#btn-validate
+{
+position: absolute;
+width: 200px;
+height: 80px;
+left: 140px;
+top: 495px;
+background: #20C5E9;
+/* Blue 3 */
+border: 1px solid #56CCF2;
+box-sizing: border-box;
+font-family: Roboto;
+font-style: normal;
+font-weight: bold;
+font-size: 30px;
+line-height: 40px;
+color: #FFFFFF;
+text-align: center;
+
+}
+
+

@@ -1,0 +1,7 @@
+<button (click)="showUsers()">Lister users</button>
+<ul>
+    <li *ngFor="let user of users ">
+        {{user.prenom}} {{user.username}}
+    </li>
+    
+    </ul>

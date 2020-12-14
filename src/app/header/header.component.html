@@ -1,0 +1,26 @@
+
+    
+    <mat-sidenav-container color="primary">
+      <mat-sidenav  [(opened)]="opened" >
+        <a class="nav-link" [routerLink]="['profils']">
+          <div id="container-option">
+        Lister Profils
+      </div>
+    </a>
+    <a class="nav-link" [routerLink]="['users']">
+    <div>
+        <span>Lister Users</span>
+      </div>
+    </a>
+      </mat-sidenav>
+      <mat-sidenav-content color="primary">
+      <button (click)="opened=!opened"  mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+        Main
+      </mat-sidenav-content>
+      
+    </mat-sidenav-container>
+    
+    <router-oulet></router-oulet>
+    

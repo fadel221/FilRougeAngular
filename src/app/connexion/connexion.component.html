@@ -1,19 +1,16 @@
-<form  id="form" >
-    <div class="field">
-
-    <label for="login">Login</label>
-    <input #login type="text"  name="login">
-
-    </div>
-
-<div class="field">
-    <label for="password">Password</label>
-    <input #pwd type="password"  id="password" name="password">
+<form #f="ngForm" class="example-form">
+    <div>
+    <mat-form-field class="example-full-width">
+      <mat-label>username</mat-label>
+      <input name="username"  #username="ngModel" ngModel matInput placeholder="Ex. Pizza" required>
+    </mat-form-field>
 </div>
-
-<div class="field">
-    <button type="button" (click)="connexion(login.value,pwd.value)"  #Valider>Valider</button>
-    <button type="reset" id="Valider">Annuler</button>
+<div>
+    <mat-form-field class="example-full-width">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput name="password"  #password="ngModel" ngModel>
+    </mat-form-field>
 </div>
-{{message}}
-</form>
+<button (click)="login(f.value)" mat-button-raised>Log in</button>
+  </form>
+  
