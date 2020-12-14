@@ -7,32 +7,30 @@ import { UserService } from '../Services/Userservice';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-private users: any[]=[];
-
+ dataSource:any;
+displayedColumns=['avatar','username','prenom','nom','email','action'];
 constructor (private userservice: UserService)
 {
 
 }
 
   ngOnInit(): void {
-  }
-
-  showUsers():any
-  {
-    
     this.userservice.getUsers().subscribe(
       
       (response: any) => {
         console.log(response["hydra:member"])
-        this.users=response["hydra:member"];
+        this.dataSource=response["hydra:member"];
       },
 
       (error :any)=>{
         console.log(error);
-        
       }
       )
     
   }
-  
-}
+
+  }
+
+    
+      
+

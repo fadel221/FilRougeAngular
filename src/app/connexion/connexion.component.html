@@ -1,16 +1,37 @@
-<form #f="ngForm" class="example-form">
-    <div>
-    <mat-form-field class="example-full-width">
-      <mat-label>username</mat-label>
-      <input name="username"  #username="ngModel" ngModel matInput placeholder="Ex. Pizza" required>
-    </mat-form-field>
-</div>
-<div>
-    <mat-form-field class="example-full-width">
-      <mat-label>Password</mat-label>
-      <input type="password" matInput name="password"  #password="ngModel" ngModel>
-    </mat-form-field>
-</div>
-<button (click)="login(f.value)" mat-button-raised>Log in</button>
-  </form>
-  
+<div class="container">
+  <!-- HEADER TITLE -->
+  <header class="top">
+      <div class="row">
+          <div class="col-sm-4 offset-md-4">
+              <h1 class="title">Sign Up</h1> </div>
+      </div>
+  </header>
+  <div class="content">
+      <article class="col-md-12">
+          <!-- START SIGN UP -->
+          <div class="row">
+              <div class="col-sm-4 offset-md-4"> <div class="form-bg" id="img">  </div>
+                  <form class="panel" #f="ngForm"  >
+                      <!-- First Name -->
+                      <div class="row">
+                          <div class="col-md-12">
+                              <label>Username</label>
+                              <input type="text" name="username" #username="ngModel" ngModel/> </div>
+                      </div>
+                                            <!-- Password -->
+                      <div class="row">
+                          <div class="col-md-12">
+                              <label>Password</label>
+                              <input type="password" name="password" #password="ngModel" ngModel/> </div>
+                      </div>
+                      
+                      
+                      <!-- Sign Up Button -->
+                      <div class="row">
+                          <div class="col-md-12">
+                              <button class="chic-button" (click)="login(f.value)" mat-button-raised>Log In</button>
+                          </div>
+                      </div>
+                  </form>
+
+                  

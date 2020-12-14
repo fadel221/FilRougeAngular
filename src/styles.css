@@ -2,7 +2,9 @@
 @import '~bootstrap/dist/css/bootstrap.css';
 body
 {
-    background-color:#FFFF
+    background-image: linear-gradient(125deg, #07051A 0%, #5342B2 53%, #C86DD7 120%);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 .ng-touched.ng-invalid
 {

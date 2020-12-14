@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Profil } from 'src/entity/Profil';
 import { ProfilService } from '../profil-service.service';
 
 
@@ -9,31 +10,28 @@ import { ProfilService } from '../profil-service.service';
 })
 export class ProfilComponent implements OnInit {
 
-private profils:any ;
 
+dataSource:any;
+displayedColumns=['id','libelle','action']
   constructor(private profil:ProfilService) {
     
    }
 
   ngOnInit(): void {
-  }
-
-  showProfils():any
-  {
-    
     this.profil.getProfils().subscribe(
       
       (response: any) => { 
-        this.profils=(response["hydra:member"]);
-        console.log(this.profils)
+        this.dataSource=(response["hydra:member"]);
+        console.log(this.dataSource)
       },
 
       (error :any)=>{
         console.log(error); 
       }
       )
-    
   }
+  
+  
   
 
 }

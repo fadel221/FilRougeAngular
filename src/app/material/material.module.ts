@@ -5,6 +5,8 @@ import { MatButtonModule } from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar'
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatTableModule} from '@angular/material/table';
+import { from } from 'rxjs';
 const MaterialComponents=
 [
   MatButtonModule,
@@ -12,7 +14,8 @@ const MaterialComponents=
   MatFormFieldModule,
   MatIconModule,
   MatToolbarModule,
-  MatSidenavModule
+  MatSidenavModule,
+  MatTableModule
 ]
 
 @NgModule({
