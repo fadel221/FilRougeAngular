@@ -2,9 +2,6 @@ table
 { 
     width :80% ; 
     margin:auto ;
+    height: 50%;
 } 
 
-img
-{
-    background-size: 10%;
-}

@@ -7,6 +7,7 @@ import { DeleteProfilComponent } from './delete-profil/delete-profil.component';
 import { DeleteUserComponent } from './delete-user/delete-user.component';
 import { DetailProfilComponent } from './detail-profil/detail-profil.component';
 import { DetailUserComponent } from './detail-user/detail-user.component';
+import { DialogComponent } from './dialog/dialog.component';
 import { ProfilComponent } from './profil/profil.component';
 import { UserComponent } from './user/user.component';
 
@@ -54,6 +55,9 @@ const routes: Routes = [
 
   {
     path: '' , component: ConnexionComponent
+  },
+  {
+    path: 'dialog' , component: DialogComponent
   }
 
 ];

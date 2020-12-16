@@ -15,7 +15,6 @@ export class TokenAddInterceptor implements HttpInterceptor {
                 });
             return next.handle(CloneReq);
         }
-        
     return next.handle(req);
         
     }

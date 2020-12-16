@@ -1,13 +1,12 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { DialogArchiveProfilComponent } from '../dialog-archive-profil/dialog-archive-profil.component';
 
 @Component({
-  selector: 'app-detail-profil',
-  templateUrl: './detail-profil.component.html',
-  styleUrls: ['./detail-profil.component.css']
+  selector: 'app-dialog-archive-profil',
+  templateUrl: './dialog-archive-profil.component.html',
+  styleUrls: ['./dialog-archive-profil.component.css']
 })
-export class DetailProfilComponent implements OnInit {
+export class DialogArchiveProfilComponent implements OnInit {
 
   constructor(public dialog:MatDialog,public dialogRef: MatDialogRef<DialogArchiveProfilComponent>,
     @Inject (MAT_DIALOG_DATA) public data: any ) 
