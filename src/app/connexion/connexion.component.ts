@@ -27,7 +27,7 @@ login(credentials :any)
     },
     (error: any) =>
     {
-      
+      console.log(error)
     }
   )
 }

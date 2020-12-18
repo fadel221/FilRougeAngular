@@ -23,6 +23,8 @@ import { DialogArchiveProfilComponent } from './dialog-archive-profil/dialog-arc
 import { DialogArchiveUserComponent } from './dialog-archive-user/dialog-archive-user.component';
 import { DialogDetailUserComponent } from './dialog-detail-user/dialog-detail-user.component';
 import { DialogUpdateUserComponent } from './dialog-update-user/dialog-update-user.component';
+import { AuthGuard } from './guard/auth.guard';
+import { DialogRegisterUserComponent } from './dialog-register-user-component/dialog-register-user-component';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,7 @@ import { DialogUpdateUserComponent } from './dialog-update-user/dialog-update-us
     DialogArchiveUserComponent,
     DialogDetailUserComponent,
     DialogUpdateUserComponent,
+    DialogRegisterUserComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,9 +62,13 @@ import { DialogUpdateUserComponent } from './dialog-update-user/dialog-update-us
     DialogUpdateProfilComponent,
     DialogUpdateUserComponent,
     DialogArchiveUserComponent,
-    DialogDetailUserComponent
+    DialogDetailUserComponent,
+    DialogRegisterUserComponent
   ],
-  providers: [RequestInterceptorProvider],
+  providers: [RequestInterceptorProvider,AuthGuard],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule 
+{
+  
+}

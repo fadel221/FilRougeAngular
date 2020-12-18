@@ -11,5 +11,9 @@ export class HeaderComponent implements OnInit {
   opened=false;
   ngOnInit(): void {
   }
+  Choice()
+  {
+    
+  }
 
 }

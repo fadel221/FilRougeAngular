@@ -22,7 +22,9 @@
     "@angular/platform-browser-dynamic": "~11.0.3",
     "@angular/router": "~11.0.3",
     "bootstrap": "^4.5.3",
+    "form-data": "^3.0.0",
     "material-icons": "^0.5.1",
+    "ngx-material-file-input": "^2.1.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"

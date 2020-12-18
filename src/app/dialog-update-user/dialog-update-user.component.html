@@ -1,21 +1,15 @@
-<mat-card class="example-card">
+
+<form #f="ngForm">
+    <label>Username</label>       
+    <input type="text" ngModel="{{data.username}}" name="username" #username >
+    <input type="text" ngModel="{{data.prenom}}" name="prenom" #prenom >
+    <input type="text" ngModel="{{data.nom}}" name="nom" #nom >
+    <input type="text" ngModel="{{data.email}}" name="email" #email >
     
-    <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
-      <mat-card-title>Shiba Inu</mat-card-title>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-    <mat-card-content>
-      <p>
-        The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-        A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-        bred for hunting.
-      </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
-  </mat-card>
-  
+    <div>
+        <img width="80" height="80" style="border-radius: 20px;" src="{{'data:image/jpg;base64,'+ data.avatar}}" alt="avatar">
+    </div>
+    <input type="file" #file ngModel="{{data.avatar}}">
+    <button (click)="UpdateUser(f.value)" mat-button-raised> Update</button>
+    </form>
+    {{data.username}}

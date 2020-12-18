@@ -19,10 +19,17 @@ export class ProfilService {
 
   getProfils(): Observable<Profil []>
   {
-     
-      return this.http.get<Profil[]>(this.url) //{ headers: this.headers});
-    
-    
+      return this.http.get<Profil[]>(this.url) //{ headers: this.headers}); 
+  }
+
+  UpdateProfil(data:any)
+  {
+     return this.http.put<Profil>('http://localhost:8000/api/admin/profils/'+data.id,data);
+  }
+
+  ArchiveProfil(data:any)
+  {
+     return this.http.delete<Profil>('http://localhost:8000/api/admin/profils/'+data.id);
   }
 
   

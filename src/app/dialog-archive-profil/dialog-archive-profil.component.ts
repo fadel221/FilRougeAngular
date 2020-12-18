@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ProfilService } from '../profil-service.service';
 
 @Component({
   selector: 'app-dialog-archive-profil',
@@ -8,13 +9,24 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dial
 })
 export class DialogArchiveProfilComponent implements OnInit {
 
-  constructor(public dialog:MatDialog,public dialogRef: MatDialogRef<DialogArchiveProfilComponent>,
+  constructor(private profil:ProfilService ,public dialog:MatDialog,public dialogRef: MatDialogRef<DialogArchiveProfilComponent>,
     @Inject (MAT_DIALOG_DATA) public data: any ) 
   { 
 
   }
 
   ngOnInit(): void {
+  }
+
+  ArchiveProfil()
+  {
+    this.profil.ArchiveProfil(this.data).subscribe(
+      (response)=>
+      {
+        console.log ("succes");
+        alert ("Archivage fait avec succées")
+      }
+    )
   }
 
 }

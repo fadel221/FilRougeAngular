@@ -18,5 +18,16 @@ export class UserService {
   {
       return this.http.get(this.url);
   }
+
+  RegisterUser(data:any)
+  {
+    return this.http.post(this.url,data);
+  }
+
+  updateUser(data:any)
+  {
+    return this.http.put(this.url+'/'+data.id,data);
+  }
+
   
 }

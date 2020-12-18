@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogArchiveUserComponent } from '../dialog-archive-user/dialog-archive-user.component';
 import { DialogDetailUserComponent } from '../dialog-detail-user/dialog-detail-user.component';
+import { DialogRegisterUserComponent} from '../dialog-register-user-component/dialog-register-user-component';
 import { DialogUpdateUserComponent } from '../dialog-update-user/dialog-update-user.component';
 import { UserService } from '../Services/Userservice';
 
@@ -12,7 +13,7 @@ import { UserService } from '../Services/Userservice';
 })
 export class UserComponent implements OnInit {
  dataSource:any;
-displayedColumns=['avatar','username','prenom','nom','email','action'];
+displayedColumns=['Id','avatar','username','prenom','nom','email','action'];
 constructor (private userservice: UserService,public dialog:MatDialog)
 {
 
@@ -35,8 +36,8 @@ constructor (private userservice: UserService,public dialog:MatDialog)
 
   DialogUserDetail(row:any): void {
     let dialogRef = this.dialog.open(DialogDetailUserComponent, {
-      width: '500px',
-      height:'500px',
+      width: '300px',
+      height:'300px',
       backdropClass:'backgroundDialog',
       data: row
       
@@ -51,8 +52,8 @@ constructor (private userservice: UserService,public dialog:MatDialog)
 
   DialogUserUpdate(row:any): void {
     let dialogRef = this.dialog.open(DialogUpdateUserComponent, {
-      width: '700px',
-      height:'900px',
+      width: '500px',
+      height:'600px',
       backdropClass:'backgroundDialog',
       data: row
     });
@@ -60,6 +61,18 @@ constructor (private userservice: UserService,public dialog:MatDialog)
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       row = result;
+    });
+  }
+
+  DialogUserRegister(): void {
+    let dialogRef = this.dialog.open(DialogRegisterUserComponent, {
+      width: '500px',
+      height:'600px',
+      backdropClass:'backgroundDialog',
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
     });
   }
 
@@ -76,6 +89,8 @@ constructor (private userservice: UserService,public dialog:MatDialog)
       row = result;
     });
   }
+
+  
 
   }
 

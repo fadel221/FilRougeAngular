@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -14,5 +14,10 @@ link='http://localhost:8000/api/login_check';
   GetToken(credentials: any)
   {
     return this.http.post(this.link,credentials)
+  }
+  //Vérifie si un token a été généré
+  loggedIn()
+  {
+    return !!localStorage.getItem('token');
   }
 }

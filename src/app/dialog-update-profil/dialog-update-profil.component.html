@@ -1,8 +1,6 @@
-<p>dialog-update-profil works!</p>
-<form>
-   
-<input  type="text" value="{{data.libelle}}">
 
-
-<button mat-button-raised> Update</button>
+<form >
+<label>Libelle</label>       
+<input type="text" #libelle value="{{data.libelle}}" >
+<button (click)="Updatelibelle(libelle.value)" mat-button-raised> Update</button>
 </form>
