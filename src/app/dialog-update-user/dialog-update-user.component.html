@@ -7,9 +7,9 @@
     <input type="text" ngModel="{{data.email}}" name="email" #email >
     
     <div>
-        <img width="80" height="80" style="border-radius: 20px;" src="{{'data:image/jpg;base64,'+ data.avatar}}" alt="avatar">
+        <img width="80" height="80" style="border-radius: 20px;" [src]="url" alt="avatar">
     </div>
-    <input type="file" #file ngModel="{{data.avatar}}">
+    <input type="file" (change)=" selectedFile($event.target.files,$event)" #file="ngModel" ngModel>
     <button (click)="UpdateUser(f.value)" mat-button-raised> Update</button>
     </form>
     {{data.username}}

@@ -10,7 +10,7 @@ import { UserService } from '../Services/Userservice';
 })
 export class DialogRegisterUserComponent implements OnInit {
   
-private  avatar: any;
+
 
   constructor(private userservice: UserService,public dialog:MatDialog) 
     { 
@@ -19,7 +19,8 @@ private  avatar: any;
 
   ngOnInit(): void {
   }
-
+  avatar:any;
+  url="./assets/images/avatar.jpg";
   RegisterUser(data:any)
   {
     const  formdata=new FormData();
@@ -30,7 +31,6 @@ private  avatar: any;
     formdata.append('profil_id',"1");
     formdata.append('avatar', this.avatar, this.avatar.name);
     formdata.append('password',data.password)
-    alert('ok')
     console.log(formdata);
     
    this.userservice.RegisterUser(formdata).subscribe(
@@ -45,9 +45,16 @@ private  avatar: any;
     )
   }
 
-  selectedFile(files: FileList)
+  selectedFile(files: FileList,event:any)
   {
-    this.avatar =files.item(0);
+    this.avatar=files.item(0);
+    let reader=new FileReader();
+    reader.readAsDataURL(event.target.files[0]);
+    reader.onload =(event: any) =>
+    {
+      this.url=event.target.result
+    }
+    
   }
   
 

@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
@@ -7,8 +7,8 @@ export class UserService {
 
   
   private url='http://localhost:8000/api/admin/users';
- // private headers: HttpHeaders
-  constructor (private http: HttpClient, )
+  
+  constructor (private http: HttpClient) //private headers: HttpHeaders)
   {
     //const token= localStorage.getItem('token');
    // this.headers= new HttpHeaders().set('Authorization', 'Bearer '+ token)
@@ -24,9 +24,9 @@ export class UserService {
     return this.http.post(this.url,data);
   }
 
-  updateUser(data:any)
+  updateUser(data:any,id:any)
   {
-    return this.http.put(this.url+'/'+data.id,data);
+    return this.http.post(this.url+'/'+id,data);
   }
 
   

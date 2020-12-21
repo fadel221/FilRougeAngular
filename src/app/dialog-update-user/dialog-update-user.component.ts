@@ -11,27 +11,27 @@ import { UserService } from '../Services/Userservice';
 export class DialogUpdateUserComponent implements OnInit {
 
   constructor(private userservice: UserService ,public dialog:MatDialog,public dialogRef: MatDialogRef<DialogUpdateUserComponent>,
-    @Inject(MAT_DIALOG_DATA) public Data: any ) 
+    @Inject(MAT_DIALOG_DATA) public data: any ) 
   { 
     
   }
 
   avatar:any;
-  data=this.Data;
-
+  url='data:image/jpg;base64,'+ this.data.avatar
   UpdateUser(data:any)
   {
-   const  formdata=new FormData();
-    data.avatar=this.avatar
+   const formdata=new FormData();
+    formdata.append('username',data.username)
+    formdata.append('prenom',data.prenom)
+    formdata.append('nom',data.nom)
+    formdata.append('email',data.email)
+    formdata.append('profil_id',"1")
+    formdata.append('avatar', this.avatar, this.avatar.name)
+    formdata.append("_method","PUT")
     if (confirm('Etes vous sure de vouloir appliquer ces modifications'))
     {
-      formdata.append('username',data.username)
-      formdata.append('prenom',data.prenom)
-      formdata.append('nom',data.nom)
-      formdata.append('email',data.email)
-      formdata.append('profil_id',"1");
-      formdata.append('avatar', this.avatar, this.avatar.name);
-      this.userservice.updateUser(formdata).subscribe(
+      
+      this.userservice.updateUser(formdata,this.data.id).subscribe(
         (response:any)=>
         {
           console.log(response)
@@ -45,9 +45,16 @@ export class DialogUpdateUserComponent implements OnInit {
     
   }
 
-  selectedFile(files: FileList)
+  selectedFile(files: FileList,event:any)
   {
     this.avatar=files.item(0);
+    let reader=new FileReader()
+    reader.readAsDataURL(event.target.files[0])
+    reader.onload =(event:any) =>
+    {
+      this.url=event.target.result
+    }
+    
   }
 
   
